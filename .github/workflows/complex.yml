@@ -4,21 +4,21 @@ jobs:
   ubuntu:
     runs-on: ubuntu-latest
     steps:
-      -name: ubuntu-step
-      -run: date
+      - name: ubuntu-step
+        run: date
   windows:
     runs-on: windows-latest
     steps:
-      -name: windows-latest
-      -run: date
+      - name: windows-latest
+        run: date
   macos:
-     runs-on: macos-latest
-     steps:
-      -name: macos-step
-      -run: date
-  depends: macos-latest
+    runs-on: macos-latest
+    steps:
+       - name: macos-step
+         run: date
+  depends: 
     needs: [ubuntu, windows, macos]
     runs-on: macos-latest
-      steps
-        -name: combined
-        -run: date
+    steps:
+      - name: combined
+        run: date
